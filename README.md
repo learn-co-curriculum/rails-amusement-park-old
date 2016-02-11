@@ -4,7 +4,7 @@
 
 Get comfortable with using form helpers, having models interact with each other, and building out a simple sessions system.
 
-You're going to be building an amusement park. There will be users, attractions, and users can take rides on attractions.
+You're going to be building an amusement park. There will be users, attractions, and users that can take rides on attractions.
 
 ## Instructions
 
@@ -31,3 +31,5 @@ Building this amusement park will require the combination of a lot of the ideas 
 * [Sessions in Rails](http://guides.rubyonrails.org/security.html#sessions)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-amusement-park' title='Rails Amusement Park'>Rails Amusement Park</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-amusement-park'>Rails Amusement Park Lab</a> on Learn.co and start learning to code for free.</p>
