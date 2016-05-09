@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @user.save
     @signup_active = "active"
     session[:id] = @user.id
   end
