@@ -1,1 +1,31 @@
-new.html.er
+<h1>Sign up for the H&J's Creepy Ass Amusement Park </h1>
+
+<%= form_for(@user) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :height, "Height (inches)" %>
+    <%= f.number_field :height %>
+  </div>
+
+  <div>
+    <%= f.label :happiness %>
+    <%= f.number_field :happiness %>
+  </div>
+
+  <div>
+    <%= f.label :nausea %>
+    <%= f.number_field :nausea %>
+  </div>
+
+  <div>
+    <%= f.label :tickets %>
+    <%= f.number_field :tickets %>
+  </div>
+
+  <%= f.submit %> 
+
+<% end %>
