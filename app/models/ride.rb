@@ -4,16 +4,17 @@ class Ride < ActiveRecord::Base
 
   def take_ride
     if !ticket_check && !height_check
-      "Sorry. You do not have enough tickets the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
+      (:danger, "Sorry. You do not have enough tickets the #{attraction.name}. You are not tall enough to ride the #{attraction.name}.")
     elsif !ticket_check
-      "Sorry. You do not have enough tickets the #{attraction.name}."
+      (:danger, "Sorry. You do not have enough tickets the #{attraction.name}.")
     elsif !height_check
-      "Sorry. You are not tall enough to ride the #{attraction.name}."
+      (:danger, "Sorry. You are not tall enough to ride the #{attraction.name}.")
     else
       ticket_update
       nausea_update
       happiness_update
       user.save
+      (:success, "Thanks for riding the #{attraction.name}!")
     end
   end
 

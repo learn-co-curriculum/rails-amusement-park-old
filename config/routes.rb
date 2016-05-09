@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#delete', as: "logout"
   resources :users
   resources :attractions
+  get 'attractions/:id/ride/', to: 'attractions#ride', as: "ride"
   
 end

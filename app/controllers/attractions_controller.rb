@@ -34,6 +34,15 @@ class AttractionsController < ApplicationController
   def destroy
   end
 
+  def ride
+    user = @current_user
+    ride = Attraction.find(params[:id])
+    r = Ride.create(user, ride)
+    message = r.take_ride
+    flash[message[0]] = message[1]
+    redirect_to user_path(user)
+  end
+
   def params_require
     params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height)
   end
