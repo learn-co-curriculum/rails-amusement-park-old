@@ -2,28 +2,33 @@
 
 <%= form_for(@user) do |f| %>
   <div>
-    <%= f.label :name %>
+    <%= f.label :name  %>
     <%= f.text_field :name %>
   </div>
 
   <div>
-    <%= f.label :height, "Height (inches)" %>
+    <%= f.label :height, "Height (in inches)" %>
     <%= f.number_field :height %>
   </div>
 
   <div>
-    <%= f.label :happiness %>
+    <%= f.label :happiness, "How happy are you? (1-5 scale)" %>
     <%= f.number_field :happiness %>
   </div>
 
   <div>
-    <%= f.label :nausea %>
+    <%= f.label :nausea, "How nauseous are you? (1-5 scale)" %>
     <%= f.number_field :nausea %>
   </div>
 
   <div>
-    <%= f.label :tickets %>
+    <%= f.label :tickets, "How many dollars are in your pocket?" %>
     <%= f.number_field :tickets %>
+  </div>
+
+  <div>
+    <%= f.label :admin, "Check box if you are a theme park owner" %>
+    <%= check_box_tag :admin, nil, ('checked' if @user.admin == true) %>
   </div>
 
   <%= f.submit %> 
