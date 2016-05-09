@@ -14,4 +14,10 @@ class SessionsController < ApplicationController
     session[:user_id] = params[:user][:id]
     redirect_to user_path(params[:user][:id])
   end
+
+  def delete
+    session.delete :user_id
+    flash[:info] = "You have been logged out. We hope you enjoyed our creepy amusement park."
+    redirect_to root_path
+  end
 end
