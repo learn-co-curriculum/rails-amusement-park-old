@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
+  
+  skip_before_action :logged_in?, only: [:new, :create]
+
   def index
 
   end
 
   def show
+
   end
 
   def new
     @user = User.new
-    @user.save
     @signup_active = "active"
     session[:id] = @user.id
   end
