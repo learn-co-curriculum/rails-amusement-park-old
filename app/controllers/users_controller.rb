@@ -34,7 +34,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :height, :happiness, :nausea, :tickets)
+    params.require(:user).permit(:name, :height, :happiness, :nausea, :tickets, :admin)
+    #user_admin is not nested
   end
 
 end
