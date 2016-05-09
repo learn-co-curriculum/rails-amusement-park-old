@@ -37,8 +37,11 @@ class AttractionsController < ApplicationController
   def ride
     user = @current_user
     ride = Attraction.find(params[:id])
-    r = Ride.create(user, ride)
-    message = r.take_ride
+    r = Ride.new
+    r.user = user
+    r.attraction = ride
+    r.save
+    message = r.take_ride_with_message
     flash[message[0]] = message[1]
     redirect_to user_path(user)
   end
