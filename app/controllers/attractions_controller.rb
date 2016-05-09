@@ -1,6 +1,5 @@
 class AttractionsController < ApplicationController
 
-
   def index
     @attractions = Attraction.all
     @attractions_active = "active"
