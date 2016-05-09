@@ -1,6 +1,7 @@
 class AttractionsController < ApplicationController
   def index
     @attractions = Attraction.all
+    @attractions_active = "active"
   end
 
   def show
@@ -22,6 +23,11 @@ class AttractionsController < ApplicationController
   end
 
   def update
+    @attraction = Attraction.find(params[:id])
+    @attraction.update(params_require)
+    @attraction.save
+    flash[:success] = "Congrats. You've sucessfully updated the user."
+    redirect_to attraction_path(@attraction)
   end
 
   def destroy
