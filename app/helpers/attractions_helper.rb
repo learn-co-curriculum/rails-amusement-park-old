@@ -7,4 +7,5 @@ module AttractionsHelper
       "Show"
     end
   end
+
 end
