@@ -11,20 +11,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+    @user.save
     redirect_to @user, notice: "Welcome to the theme park!"
   end
 
   def update
     @user.update(user_params)
-
     redirect_to @user, notice: "User was successfully updated."
   end
 
   def edit
   end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:name, :nausea, :happiness, :tickets, :height)

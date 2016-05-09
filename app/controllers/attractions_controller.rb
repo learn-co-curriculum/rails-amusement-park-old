@@ -1,9 +1,9 @@
 class AttractionsController < ApplicationController
 
-   before_action :set_user, only: [:show, :update, :edit]
+   before_action :set_attraction, only: [:show, :update, :edit]
 
   def index
-    @attraction = Attraction.all
+    @attractions = Attraction.all
   end
 
   def show
@@ -13,7 +13,7 @@ class AttractionsController < ApplicationController
 
   def new
     @attraction = Attraction.new
-  end 
+  end
 
   def create
     @attraction = Attraction.new(attraction_params)
@@ -37,7 +37,7 @@ class AttractionsController < ApplicationController
     params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height)
   end
 
-  def set_params
+  def set_attraction
     @attraction = Attraction.find(params[:id])
   end
 end
