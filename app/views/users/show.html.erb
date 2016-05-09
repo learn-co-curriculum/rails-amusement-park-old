@@ -1,0 +1,14 @@
+<h1>User Page</h1>
+<p id="notice"><%= flash[:notice] %></p>
+Name: <%= @user.name %><br>
+<% if @user.admin %>
+  ADMIN
+<% else  %>
+  Height: <%= @user.height %><br>
+  Mood: <%= @user.mood %><br>
+  Happiness: <%= @user.happiness %><br>
+  Nausea: <%= @user.nausea %><br>
+  Tickets: <%= @user.tickets %><br>
+<% end %><br>
+
+<%= link_to "See attractions", attractions_path %>
