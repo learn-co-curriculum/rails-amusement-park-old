@@ -43,6 +43,7 @@ class AttractionsController < ApplicationController
     r.save
     message = r.take_ride_with_message
     flash[message[0]] = message[1]
+
     redirect_to user_path(user)
   end
 
