@@ -47,6 +47,7 @@ group :test, :development do
   gem "sqlite3"
   gem "pry"
   gem "rack_session_access"
+  gem "rails-erd"
 end
 
 group :production do

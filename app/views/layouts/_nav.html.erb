@@ -1,0 +1,5 @@
+<% if !session[:user_id].nil? %>
+  <li><a href=<%= user_path(user) %>>Hello, <%= user.name %>!</a></li>
+  <li><a href=<%= attractions_path %>>Attractions</a></li>
+  <li><a href="/signout">Log Out</a></li>
+<% end %>
