@@ -23,7 +23,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+            <li class="<%= @signin_active %>"><a class="navbar-nav" href="<%= signin_url %>"/>Sign in</a></li>
+            <li class="<%= @signup_active %>"><a class="navbar-nav" href="<%= new_user_url %>"/>Sign up</a></ul>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

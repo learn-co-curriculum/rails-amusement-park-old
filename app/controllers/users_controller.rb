@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @signup_active = "active"
   end
 
   def edit
