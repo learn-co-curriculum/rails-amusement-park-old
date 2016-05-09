@@ -9,8 +9,11 @@ class ApplicationController < ActionController::Base
 
   private
   def logged_in?
-    redirect_to signin_path unless !!session[:user_id]
-    @current_user = current_user
+    if session[:user_id].nil?
+      redirect_to signin_path 
+    else
+      @current_user = current_user
+    end
   end
 
   def current_user
