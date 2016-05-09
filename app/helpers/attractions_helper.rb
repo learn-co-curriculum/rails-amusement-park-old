@@ -1,5 +1,9 @@
-module AttractionsHelpers
+module AttractionsHelper
   def admin?
-    if
+    if @current_user.admin
+      "Go on"
+    else
+      "Show"
+    end
   end
 end
