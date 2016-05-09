@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1><%= @user.name %></h1>
+  <%= display_name_admin_header(@user) %>
   <h2>All <%= @user.height %> inches of you are looking extra beefy today, hope you are enjoying the rides!</h2>
   <p>Looks like you are in a <%= @user.mood %> Mood!</p>
   <a class="btn btn-primary btn-lg" href="<%= edit_user_url %>" role="button">Edit your profile</a>
