@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
     session[:user_id] = @user.id
+    flash[:success] = "Congrats. You've sucessfully created an account."
     redirect_to user_path(@user)
   end
 
