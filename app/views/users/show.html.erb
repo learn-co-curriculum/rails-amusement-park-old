@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <h1><%= @user.name %></h1>
-  <p>All <%= @user.height %> inches of you are looking extra beefy today, hope you are enjoying the rides!</p>
+  <h2>All <%= @user.height %> inches of you are looking extra beefy today, hope you are enjoying the rides!</h2>
+  <p>Looks like you are in a <%= @user.mood %> Mood!</p>
   <a class="btn btn-primary btn-lg" href="<%= edit_user_url %>" role="button">Edit your profile</a>
   <a class="btn btn-primary btn-lg" href="<%= attractions_url %>" role="button">See attractions</a>
 </div>

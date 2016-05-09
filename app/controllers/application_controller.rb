@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   private
   def logged_in?
-    redirect_to signin_path unless !!session[:id]
+    redirect_to signin_path unless !!session[:user_id]
   end
 
   def current_user
