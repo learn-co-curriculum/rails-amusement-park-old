@@ -36,7 +36,7 @@ class AttractionsController < ApplicationController
 
   def ride
     user = @current_user
-    ride = Attraction.find(params[:id])
+    ride = Attraction.find_by(id: params[:id])
     r = Ride.new
     r.user = user
     r.attraction = ride
