@@ -1,1 +1,17 @@
-index.html.erb
+<h1>Listing attractions</h1>
+<table class='table'>
+  <tr>
+    <th> Picture </th>
+    <th> Name </th>
+    <th> Tickets </th>
+    <th> Details </th>
+  </tr>
+  <% @attractions.each do |attraction| %>
+  <tr>
+    <td> <img src= "http://pixel.nymag.com/imgs/daily/vulture/2014/10/17/17-clowns-pennywise.w529.h352.jpg"> </td>
+    <td> <%= attraction.name %> </td>
+    <td> <%= attraction.tickets %></td>
+    <td> <a href="<%= attraction_path(attraction) %>"> Show <%= attraction.name %> </a> </td>
+  </tr>
+  <% end %>
+</table>
