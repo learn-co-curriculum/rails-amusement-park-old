@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:user][:id])
+    @user = User.find(params[:user][:id])
     session[:user_id] = params[:user][:id]
+    flash[:success] = "Welcome back #{@user.name}"
     redirect_to user_path(params[:user][:id])
   end
 
