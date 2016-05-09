@@ -20,7 +20,7 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.create(params_require)
     flash[:success] = "Congrats. You've sucessfully created an attraction."
-    redirect_to attractions_path(@attraction)
+    redirect_to attraction_path(@attraction)
   end
 
   def update
