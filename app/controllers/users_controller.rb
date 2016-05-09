@@ -29,6 +29,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    @user.save
+    flash[:success] = "Congrats. You've sucessfully updated the account."
+    redirect_to user_path(@user)
   end
 
   def destroy

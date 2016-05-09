@@ -26,6 +26,7 @@
           <ul class="nav navbar-nav">
             <% if @current_user %>
               <li class="<%= @show_active %>"><a class="navbar-nav" href="<%= user_path(@current_user) %>"/>Hello, <%= @current_user.name %></a></li>
+              <li class="<%= @attractions_active %>"><a class="navbar-nav" href="<%= attractions_path %>">Attractions</a></li>
               <li><a class="navbar-nav" href="<%= logout_path %>">Log Out</a></li>
             <% else %>
               <li class="<%= @signin_active %>"><a class="navbar-nav" href="<%= signin_url %>"/>Sign in</a></li>
