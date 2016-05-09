@@ -26,7 +26,7 @@ class AttractionsController < ApplicationController
   end
 
   def update
-    @attraction.find(params[:id])
+    @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
 
     redirect_to @attraction, notice: "Attraction was successfully updated."
