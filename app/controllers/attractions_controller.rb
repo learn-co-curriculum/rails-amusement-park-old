@@ -1,6 +1,6 @@
 class AttractionsController < ApplicationController
-  skip_before_action :logged_in?, only: [:index, :root_path, :new_user_path]
-  
+
+
   def index
     @attractions = Attraction.all
     @attractions_active = "active"
