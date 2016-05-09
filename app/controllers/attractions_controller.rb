@@ -1,11 +1,12 @@
 class AttractionsController < ApplicationController
 
+   before_action :set_user, only: [:show, :update, :edit]
+
   def index
     @attraction = Attraction.all
   end
 
   def show
-    @attraction = Attraction.find(params[:id])
   end
 
   #admin only
@@ -22,11 +23,9 @@ class AttractionsController < ApplicationController
   end
 
   def edit
-    @attraciton = Attraction.find([params[:id])
   end
 
   def update
-    @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
 
     redirect_to @attraction, notice: "Attraction was successfully updated."
@@ -36,6 +35,9 @@ class AttractionsController < ApplicationController
 
   def attraction_params
     params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height)
-    
+  end
+
+  def set_params
+    @attraction = Attraction.find(params[:id])
   end
 end
