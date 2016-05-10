@@ -33,7 +33,9 @@ class Ride < ActiveRecord::Base
   end
 
   def height
-    if user.height <= attraction.min_height
+    if user.height >= attraction.min_height
+      return false
+    elsif user.height <= attraction.min_height
       @errors << "You are not tall enough to ride the #{attraction.name}."
     end
   end
