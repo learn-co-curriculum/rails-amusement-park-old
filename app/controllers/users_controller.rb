@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  #before_action :require_login
+  before_action :require_login
+  skip_before_action :require_login, only: [:new, :show, :create]
 
   def new
     @user = User.new
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-    @ride = @user.rides.new
+    @ride = @user.rides.create
     @ride.attraction_id = params[:attraction_id]
     @ride.take_ride
     @user.save
