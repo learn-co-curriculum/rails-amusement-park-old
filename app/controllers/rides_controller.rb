@@ -7,9 +7,13 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.create(ride_params)
+    @ride.user_id = current_user.id
     @ride.save 
 
+    flash[:notice] = @ride.take_ride 
+
     redirect_to current_user
+
   end
 
   private
