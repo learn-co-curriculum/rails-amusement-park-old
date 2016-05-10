@@ -2,11 +2,9 @@ class Ride < ActiveRecord::Base
   belongs_to :user
   belongs_to :attraction
 
-
   def take_ride
     @errors = []
-    tickets
-    height
+    verify
     if @errors.empty?
       nausea
       happy
@@ -32,11 +30,12 @@ class Ride < ActiveRecord::Base
     end
   end
 
-  def height
-    if user.height >= attraction.min_height
-      return false
-    elsif user.height <= attraction.min_height
+  def verify
+    if user.height <= attraction.min_height
       @errors << "You are not tall enough to ride the #{attraction.name}."
+      tickets
+    else
+      tickets
     end
   end
 
