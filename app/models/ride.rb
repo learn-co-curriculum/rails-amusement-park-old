@@ -32,8 +32,8 @@ class Ride < ActiveRecord::Base
 
   def verify
     if user.height <= attraction.min_height
-      @errors << "You are not tall enough to ride the #{attraction.name}."
       tickets
+      @errors << "You are not tall enough to ride the #{attraction.name}."
     else
       tickets
     end
