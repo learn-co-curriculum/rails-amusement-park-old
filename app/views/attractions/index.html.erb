@@ -1,0 +1,5 @@
+<% if @user.admin == true %>
+<%= render partial: 'admin', locals: { user: @user } %>
+<% else %>
+<%= render 'user'%>
+<% end %>
