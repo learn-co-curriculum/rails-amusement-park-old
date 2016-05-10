@@ -1,0 +1,17 @@
+Welcome back to the theme park! <br><br>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= "ADMIN" if @user.admin == true %><br>
+
+Name: <%= @user.name %> <br>
+Tickets: <%= @user.tickets %> <br>
+Mood: <%= @user.mood %> <br>
+Height: <%= @user.height %> <br>
+
+
+<%= link_to "See attractions", attractions_path %> <br>
+
+<%= link_to "Log Out", logout_path, method: :delete %>
