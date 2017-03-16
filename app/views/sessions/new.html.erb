@@ -1,0 +1,5 @@
+<%= form_tag('/signin', method: 'post') do %>
+  <%= label_tag "Select your name" %></br>
+  <%= collection_select(:user, :id, User.all, :id, :name) %></br>
+  <%= submit_tag("Sign In") %>
+<% end %>
