@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="col-mid-3">
+        <h1> <%= @attraction.name%> </h1>
+      </div>
+      
+      <div>
+        <%= ride_or_edit? %>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="text-center"> Total Number of Users </h2>
+      <h3 class="text-center"> <%= @attraction.rides.count %> </h3>
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-center"> Ticket Requirement </h2>
+      <h3 class="text-center"> <%= @attraction.tickets %> </h3>
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-center"> Height Requirement </h2>
+      <h3 class="text-center"> <%= @attraction.min_height %> inches </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-center"> Nausea Rating </h2>
+      <h3 class="text-center"> <%= @attraction.nausea_rating %> </h3>
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-center"> Happiness Rating </h2>
+      <h3 class="text-center"> <%= @attraction.happiness_rating %> </h3>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+
+</div>

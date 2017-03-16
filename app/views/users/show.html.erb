@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <%= display_name_admin_header(@user) %>
+  <h2>All <%= @user.height %> inches of you are looking extra beefy today, hope you are enjoying the rides!</h2>
+  <p>Looks like you are in a <%= @user.mood %> Mood! Tickets: <%= @user.tickets %></p>
+  <!-- <a class="btn btn-primary btn-lg" href="<%= edit_user_url %>" role="button">Edit your profile</a> -->
+  <a class="btn btn-primary btn-lg" href="<%= attractions_url %>" role="button">See attractions</a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Happiness</h2>
+      <p>Wow our happiness meters are reading a value of <%= @user.happiness %> coming from your body.</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Tickets</h2>
+      <p>You currently have <%= @user.tickets %> ticket(s).  Woohoo!</p>
+   </div>
+    <div class="col-md-4">
+      <h2>Nausea</h2>
+      <p>Not sure why we have these but our nausea meters are reading a value of <%= @user.nausea %> coming from your body.</p>
+    </div>
+  </div>
+  <hr>
+</div>

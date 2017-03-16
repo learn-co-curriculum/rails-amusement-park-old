@@ -1,0 +1,14 @@
+<h1> Login to our Creepy Amusement Park </h1>
+<%= form_tag '/signin' do %>
+  <div>
+  <%= label_tag :name, "Select your name beeflover" %>
+  </div>
+  <div>
+  <%= collection_select(:user, :id, User.all, :id, :name) %>
+  </div>
+
+  <br>
+  <div>
+    <%= submit_tag "Sign In" %>
+  </div>
+<% end %>
